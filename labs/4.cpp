@@ -3,12 +3,12 @@
 using namespace std;
 long double fact(int N)
 {
-    if(N < 0) // åñëè ïîëüçîâàòåëü ââåë îòðèöàòåëüíîå ÷èñëî
-        return 0; // âîçâðàùàåì íîëü
-    if (N == 0) // åñëè ïîëüçîâàòåëü ââåë íîëü,
-        return 1; // âîçâðàùàåì ôàêòîðèàë îò íóëÿ - íå óäèâëÿåòåñü, íî ýòî 1 =)
-    else // Âî âñåõ îñòàëüíûõ ñëó÷àÿõ
-        return N * fact(N - 1); // äåëàåì ðåêóðñèþ.
+    if(N < 0) 
+        return 0;
+    if (N == 0)
+        return 1; 
+    else 
+        return N * fact(N - 1);
 }
 int main(){
 	int znak=-1;
