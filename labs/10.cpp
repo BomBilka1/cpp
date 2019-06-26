@@ -1,46 +1,27 @@
 #include <iostream>
 #include <cmath>
-
 using namespace std;
-double f1(double x){
-    return 1/((2+cos(x))*(3+cos(x)));
+double f1(double x)
+{
+	return((1.0)/((2.0+cos(x))*(3.0+cos(x))));
 }
-
-double f2(double x){
-    return 1/(1+x*x);
+double f2(double x)
+{
+	return((1.0)/(1.0+x*x));
 }
-
-double integral(int n, double a, double b, double i, double (*calculate)(double )){
-	double result = 0;
-	double h = (b-a)/n;
-	
-	
-	while(i<=b){
-        result += (*calculate)(i);
-        
-
-        if((round(i*100)/100)==-0.01){
-            i = 0;
-        } else {
-            i = i+h;
-        }
-    }
-    result *= h;
-    return result;
+double pr(double a, double b, int kol, double (*f)(double x))
+{
+	double x, h=(b-a)/kol, s=0;
+	x = a+h;
+	for (int i=1; i<kol; i++)
+	{
+		s+=x;
+		x+=h;
+	}
+	return h*s;
 }
-
 int main()
 {
-    //1 
-    double result;
-    
-    double (*calculate)(double ) = &f1;
-    
-    result = integral(100, 0, 2*M_PI, 0, calculate);
-    cout << "Result 1: " << result << endl;
-    
-    
-    calculate = &f2;
-    result = integral(200, 1/sqrt(3), sqrt(3), 1/sqrt(3), calculate);
-    cout << "Result 2: " << result << endl;
+	cout<<pr(0,2*M_PI,100,f1)<<endl;
+	cout<<pr(1/sqrt(3),sqrt(3),200,f2)<<endl;
 }
