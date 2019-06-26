@@ -117,7 +117,7 @@ setlocale(0, "");
             y = ((2-0)/(-4+6))*(xn-4);
             
         }
-		cout<<'\t'<<round(xn*10)/10<<'\t'<<round(y*10)/10<<endl;
+		cout<<'\t'<<round(xn*10)/10<<'\t'<<round(y*100000)/100000<<endl;
 	}
 return 0;
 
