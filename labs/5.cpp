@@ -12,7 +12,7 @@ setlocale(0, "");
 
 int n, _min, max, s,count=0, index=0;
  
-cout<<"\nVvedite naturalnoe chislo n=";
+cout<<"\nВведите натуральное число: ";
 cin>>n;
 _min=n%10;
 for(;n>0;n/=10,count++){
