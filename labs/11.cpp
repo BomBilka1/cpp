@@ -6,9 +6,10 @@
 using namespace std;
 int main()
 {
+setlocale(0, "");
 	srand ( time(0) );
 	int n;
-	cout<< "Введите размерность массива: ";
+	cout<< "Введите размер массива: ";
     cin>> n;
 	double arr[n];
     for (int i = 0; i < n; i++)
@@ -20,8 +21,13 @@ int main()
     cout <<"\n";
     cout<<"\n";
     int sum = 0;
+    int coo=0;
     int min = arr[0];
-    int count = (arr[0] > 0);
+    for (int i = 0; i < n; i++){
+    	if (arr[i]>0){
+	
+    	coo+=1;}
+	}
     for (int i = 1; i < n; i++)
     {
         int a = arr[i];
@@ -51,6 +57,6 @@ for(int j=0;j<n;j++)
  }
 
 
-    cout<<"\n"<<"Кол-во положительных: "<<count<<"\n";
+    cout<<"\n"<<"Кол-во положительных: "<<coo<<"\n";
     cout<<"Сумма: "<<sum;
 }
