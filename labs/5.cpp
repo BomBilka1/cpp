@@ -22,21 +22,21 @@ k+=1;
 cout << '\n';
 i--;
 }
-int n, _min, max, s,count=0, index=0;
+
+int n, c=10, index=1, a=0, b=10, p=1, f;
  
 cout<<"\nВведите натуральное число: ";
 cin>>n;
-_min=n%10;
-for(;n>0;n/=10,count++){
-    s=n%10;
-    if(s<_min){
-        _min=s;
-        index=count;
-    }
-}
+do{
 
-cout<<"min: "<<_min<<"\n";
-cout<<"index: "<<count-index;
-    
+f=(n%b)/p;
+b*=10;
+p*=10;
+(f<c) ? c=f : index+=1;
+}
+while((n/p)>0);
+cout<<"MIN: "<<c<<endl;
+cout<<"INDEX: "<<index;
     return 0;
 }
+
