@@ -3,13 +3,25 @@ using namespace std;
 int main()
 {
 setlocale(0, "");
-    for(int i = 6; i > 0; i--)
-    {
-        for(int j = i; j > 0; j--)
-            cout << '*';
-        cout << '\n';
-    }
+int i = 6;
+int j=7;
+int k;
+k=j;
 
+while (i > 0)
+{
+k=k-1;
+j=k;
+k=0;
+while (j > 0)
+{
+cout << '*';
+j--;
+k+=1;
+}
+cout << '\n';
+i--;
+}
 int n, _min, max, s,count=0, index=0;
  
 cout<<"\nВведите натуральное число: ";
