@@ -12,14 +12,12 @@ long double fact(int N)
 }
 int main(){
 	int znak=-1;
-	double s=0, eps=0.0001, x, slag, N, k;
+	double s=0, eps=0.0001, x, slag=1, N=0, k=1;
 	do {
 		cin>>x;
 	}
 	while (abs(x)>=1);
 	do {
-		N=0;
-		k=1;
 		slag=znak*(pow(3,N)*pow(x,k))/fact(N);
 		k=k+2;
 		N=N+2;
@@ -31,4 +29,4 @@ int main(){
 	cout<<s<<endl;
 	cout<<x*cos(3*x);
 	return 0;
-}		
+}	
