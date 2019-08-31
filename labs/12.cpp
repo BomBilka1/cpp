@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
 	int kol,max,maxn;
-	cout << "‚ўҐ¤ЁвҐ Є®«ЁзҐбвў® н«Ґ¬Ґ­в®ў ¬ ббЁў : ";
+	cout << "Кол-во элементов массива: ";
 	cin >> kol;
 	int a[kol];
 	srand(time(NULL));
@@ -44,8 +44,8 @@ int main()
 		}
 		else
 		{
-			if (a[i]<maxn){maxn=a[i];}
+			if (a[i]>maxn){maxn=a[i];}
 		}
 	}
-	cout << endl <<"Њ ЄбЁ¬ «м­®Ґ зҐв­®Ґ  зЁб«®"<<'\t'<<max<<endl<<"ЊЁ­Ё¬ «м­®Ґ ­ҐзҐв­®Ґ  зЁб«®"<<'\t'<<maxn;
+	cout << endl <<"max1 "<<max<<endl<<"max2 "<<maxn;
 }
