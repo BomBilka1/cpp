@@ -1,32 +1,37 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
+#include <cmath>
 using namespace std;
-int summa(int row, int size, int **matrix)
+int summa(int row, int n, int m, double **matrix)
 {
-	int sum = 0, k = 0, f = 0;
-	for (int i=0; i<size; ++i){
+	double sum = 0, k = 0, f = 0;
+	for (int row = 0; row<m; row++){
+	    
+	for (int i = 0; i<n; ++i){
 		sum += matrix[row][i];
-		if (f < sum)
+	}
+	if (f < sum)
 		{
 			f = sum;
 			k+=1;
 		}
-	}
-return sum;
+		sum=0;
+}
+return k;
 }
 int main()
 {
 	int n;
 	int m;
-	cin>>m>>n;
-	int**a = new int*[n];
+	cin>>n>>m;
+	double**a = new double*[n];
 	for (int i = 0; i<n; ++i)
-		a[i] = new int [m];
+		a[i] = new double [m];
 	
 	for (int i = 0; i<n; ++i)
 		for (int j = 0; j<m; ++j)
-			a[i][j] = rand()%100;
+			a[i][j] = 0+1+rand()%(100-0+1)-(rand()%((int)pow(10,4))/pow(10,4));;
 	for (int i = 0; i<n; ++i)
 	{
 		for (int j = 0; j<m; ++j)
@@ -34,6 +39,6 @@ int main()
 		cout << endl;
 	}
 	cout << endl;
-	cout << summa(1, 3, a) << endl;
+	cout << summa(1, n, m, a) << endl;
 	return 0;	
 }
